@@ -10,15 +10,17 @@ SPOILER="I watched Avengers: Endgame. Thanos d**s..."
 while ((1))
 do
 	if [[ $start != $SECONDS ]]
-	then
+	then	
+		sleep 1
 		echo "$SECONDS"
 		echo >> log.txt "$SECONDS"
 		start=$SECONDS
-		
+	
 		RAND=$RANDOM
 		if [[ $((RAND%3)) -eq 0 ]]
 		then
 			echo $SPOILER
+			sleep .2
 			echo >> log.txt "$SPOILER"
 		fi
 	fi
